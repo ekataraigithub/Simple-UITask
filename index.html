@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Sequence</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+input[type="number"] {
+  width: 100px;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+#output {
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Number Sequence</h1>
+
+<input type="number" id="numberInput" placeholder="Enter a number">
+<button onclick="generateSequence()">Generate</button>
+
+<div id="output"></div>
+
+<script>
+function generateSequence() {
+  var number = parseInt(document.getElementById("numberInput").value);
+  var output = document.getElementById("output");
+  output.innerHTML = ""; // Clear previous output
+
+  if (number <= 0) {
+    output.innerHTML = "Enter a positive value";
+  } else if (number % 2 === 0) {
+    // Even number
+    for (var i = number + 2; i <= number + 6; i += 2) {
+      output.innerHTML += i + " ";
+    }
+  } else {
+    // Odd number
+    for (var i = number + 2; i <= number + 6; i += 2) {
+      output.innerHTML += i + " ";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
